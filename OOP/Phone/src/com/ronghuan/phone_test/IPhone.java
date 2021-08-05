@@ -7,7 +7,7 @@ public class IPhone extends Phone implements Ringable{
 	}
 
 	
-	// ATTRIBUTES METHOD
+	// ABSTRACT METHOD
 	@Override
 	public void displayInfo() {
 		System.out.println("iPhone " + getVersionNumber() + " from " + getCarrier());
