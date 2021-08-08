@@ -30,8 +30,8 @@ public class CounterController {
 	@RequestMapping("/")
 	public String index(HttpSession s) {
 		int currentCount = getSessionValue(s);  // GET COUNT VALUE
-		currentCount++;   						// INCREASE COUNT BY ONE 
-		setSessionValue(s, currentCount);  		// SET NEW COUNT VALUE
+		currentCount++;   			// INCREASE COUNT BY ONE 
+		setSessionValue(s, currentCount);  	// SET NEW COUNT VALUE
 		return "index.jsp"; 
 	}
 	
@@ -57,8 +57,8 @@ public class CounterController {
 		
 		
 		int currentCount = getSessionValue(s);  // GET CURRETN COUNT NUM
-		currentCount += time;					// INCREASE IT BY INPUT TIMES
-		setSessionValue(s, currentCount);		// UPDATE COUNT NUM
+		currentCount += time;			// INCREASE IT BY INPUT TIMES
+		setSessionValue(s, currentCount);	// UPDATE COUNT NUM
 		return "index.jsp";
 	}
 	
