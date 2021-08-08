@@ -10,9 +10,10 @@
 	<title>Insert title here</title>
 </head>
 <body>
-	<div class="container">
+	<div class="container mt-3">
 		<p>You have visited <a href="/">http://localhost:8080/</a> <c:out value ="${currentCount}"/> times</p>
-		<p><a href="/">Test another visit?</a></p>		
+		<p><a href="/">Test another visit?</a></p>	
+		<a href="/reset" class="btn btn-secondary">Reset Counter</a>
 	</div>
 </body>
 </html>
