@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class DojoController {
 	// ARRAY OF STRINGS TO STORE NAMES OF PEOPLE WHO LIKE JAVA
-    ArrayList<String> peopleLikeJava = new ArrayList<String>();
+    	ArrayList<String> peopleLikeJava = new ArrayList<String>();
 	
 	// DISPLAY THE DOJO SURVEY FORM
 	@RequestMapping("/")
