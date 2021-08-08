@@ -9,7 +9,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping("/")
-public class codeController {
+public class CodeController {
 	// RETURN A LIST OF STRINGS
 	private String[] getTenets() {
 		return new String[] {"Loyalty", "Courage", "Veracity", "Compassion", "Honor"};
