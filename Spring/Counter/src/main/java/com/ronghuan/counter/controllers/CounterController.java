@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class CounterController {
-<<<<<<< HEAD
 	// PRIVATE GET/SET METHODS
 	// RETURN SPECIFIC VALUE FROM SESSION
 	private int getSessionValue(HttpSession session) {
@@ -18,21 +17,6 @@ public class CounterController {
 		if (countVal == null) {
 			setSessionValue(session, 0);
 			countVal = session.getAttribute("count");
-=======
-	
-	@RequestMapping("/")
-	public String index(HttpSession session) {
-		// SET SESSION(IF COUNT IS NOT ALREADY IN SESSION)
-		if (session.getAttribute("count").equals(null)) {
-			// INITIALIZE COUNT IN SESSION
-			session.setAttribute("count", 0);
-		} else {
-			// INCREASE THE COUNT BY 1 USING GET/SET
-			Integer currentCount = (Integer) session.getAttribute("count");
-			currentCount += 1;
-			// SET NEW COUNT INTO SESSION 
-			session.setAttribute("count", currentCount);
->>>>>>> 40782f9ca6b3d0711bdeb3406589acfd1ad151c7
 		}
 		return (Integer)countVal;
 	}
@@ -54,14 +38,8 @@ public class CounterController {
 	// SHOW COUNTER PAGE AND DISPLAY NUM OF COUNTS
 	@RequestMapping("/counter")
 	public String counter(HttpSession session, Model model) {
-<<<<<<< HEAD
 		// PASS PARAMETER
 		model.addAttribute("currentCount", getSessionValue(session));
-=======
-		Integer currentCount = (Integer) session.getAttribute("count");
-		// PASS PARAMETER
-		model.addAttribute("currentCount", currentCount);
->>>>>>> 40782f9ca6b3d0711bdeb3406589acfd1ad151c7
 		return "counter.jsp";
 	}
 	
