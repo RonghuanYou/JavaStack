@@ -4,7 +4,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
 import java.util.Date;
 import java.text.SimpleDateFormat;
 
@@ -15,7 +14,6 @@ public class DateController {
 	public String index (){
 		return "index.jsp";
 	}
-	
 	
 	@RequestMapping("/date")
 	public String date (Model model){
@@ -31,9 +29,7 @@ public class DateController {
 		// PASS ATTRIBUTE
 		model.addAttribute("currentDate", formattedDate.format(date));		
 		return "date.jsp";
-		
 	}
-	
 	
 	@RequestMapping("/time")
 	public String time (Model model){
@@ -45,5 +41,4 @@ public class DateController {
 		model.addAttribute("currentTime", formattedDate.format(date));	
 		return "time.jsp";
 	}
-	
 }
