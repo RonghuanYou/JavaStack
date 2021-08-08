@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class CounterController {
 	
 	@RequestMapping("/")
-	public String index(HttpSession session, Model model) {
+	public String index(HttpSession session) {
 		// SET SESSION(IF COUNT IS NOT ALREADY IN SESSION)
 		if (session.getAttribute("count").equals(null)) {
 			// INITIALIZE COUNT IN SESSION
