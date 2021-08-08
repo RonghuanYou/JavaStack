@@ -21,8 +21,6 @@ public class CounterController {
 			currentCount += 1;
 			// SET NEW COUNT INTO SESSION 
 			session.setAttribute("count", currentCount);
-			// PASS PARAMETER
-			model.addAttribute("currentCount", currentCount);
 		}
 		return "index.jsp";
 	}
@@ -30,6 +28,7 @@ public class CounterController {
 	@RequestMapping("/counter")
 	public String counter(HttpSession session, Model model) {
 		Integer currentCount = (Integer) session.getAttribute("count");
+		// PASS PARAMETER
 		model.addAttribute("currentCount", currentCount);
 		return "counter.jsp";
 	}
