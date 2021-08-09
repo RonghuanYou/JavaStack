@@ -24,6 +24,7 @@ public class DojoController {
 	
 	// PERFORM THE ACTION OF CREATING FORM
 	@RequestMapping(value="/survey", method=RequestMethod.POST)
+	//@PostMapping("/survey")
 	public String create(
 		HttpSession session,
 		@RequestParam(value="name") String name,
