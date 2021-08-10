@@ -15,7 +15,7 @@ import com.ronghuan.dojosurvey.models.DojoSurvey;
 @Controller
 public class DojoController {
 	// ARRAY OF STRINGS TO STORE NAMES OF PEOPLE WHO LIKE JAVA
-    ArrayList<String> peopleLikeJava = new ArrayList<String>();
+    	ArrayList<String> peopleLikeJava = new ArrayList<String>();
 	
 	// DISPLAY THE DOJO SURVEY FORM
 	@RequestMapping("/")
@@ -25,7 +25,12 @@ public class DojoController {
 	
 	
 	// PERFORM THE ACTION OF CREATING FORM
+<<<<<<< HEAD
 	@PostMapping("/survey")
+=======
+	@RequestMapping(value="/survey", method=RequestMethod.POST)
+	//@PostMapping("/survey")
+>>>>>>> 05043f1bc53c531bf54840e712b29c392b1f1606
 	public String create(
 		Model model,
 		RedirectAttributes redirectAttributes,
