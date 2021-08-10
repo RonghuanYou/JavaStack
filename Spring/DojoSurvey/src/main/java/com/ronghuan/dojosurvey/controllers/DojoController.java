@@ -2,12 +2,14 @@ package com.ronghuan.dojosurvey.controllers;
 
 import java.util.ArrayList;
 
-import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.ronghuan.dojosurvey.models.DojoSurvey;
 
 
 @Controller
@@ -23,22 +25,21 @@ public class DojoController {
 	
 	
 	// PERFORM THE ACTION OF CREATING FORM
-	@RequestMapping(value="/survey", method=RequestMethod.POST)
+	@PostMapping("/survey")
 	public String create(
-		HttpSession session,
+		Model model,
+		RedirectAttributes redirectAttributes,
 		@RequestParam(value="name") String name,
 		@RequestParam(value="location") String location,
 		@RequestParam(value="language") String language,
 		@RequestParam(value="comment") String comment)
 	{
-		session.setAttribute("name", name);
-		session.setAttribute("location", location);
-		session.setAttribute("language", language);
 		// FIND PEOPLE WHO LIKE JAVA, PUSH ITS NAME INTO ARRAY CALLED peopleLikeJava
 		if (language.equals("Java")) {
 			peopleLikeJava.add(name);
 		}
-		session.setAttribute("comment", comment);
+		
+		redirectAttributes.addFlashAttribute("result", new DojoSurvey(name, location, language, comment));
 		return "redirect:/result";
 	}
 	
