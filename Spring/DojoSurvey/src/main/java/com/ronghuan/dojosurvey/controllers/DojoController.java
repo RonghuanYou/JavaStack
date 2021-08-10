@@ -26,7 +26,6 @@ public class DojoController {
 	
 	// PERFORM THE ACTION OF CREATING FORM
 	@PostMapping("/survey")
-	//@PostMapping("/survey")
 	public String create(
 		Model model,
 		RedirectAttributes redirectAttributes,
