@@ -7,17 +7,21 @@
 	<!-- CSS only -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 	<meta charset="UTF-8">
-	<title>Edit Book</title>
+	<title>Book</title>
 </head>
 <body>
 	<div class="container">
-		<form action="/books/update/${book.id}" method="post">
-			<p>Title: <input type="text" name="title" value="${book.title}"/></p>
-			<p>Description: <input type="text" name="description" value="${book.description}"/></p>
-			<p>Language: <input type="text" name="language" value="${book.language}"/></p>
-			<p># of Pages: <input type="number" name="pages" value="${book.numberOfPages}"/></p>
-			<button>Update</button>
-		</form>
+		<h1><c:out value="${book.title}"/></h1>
+		<p>Description: <c:out value="${book.description}"/></p>
+		<p>Language: <c:out value="${book.language}"/></p>
+		<p>Number of pages: <c:out value="${book.numberOfPages}"/></p>	
+		
+		<a href="/books/edit/${book.id}">Edit Book</a>
+		
+		<form action="/books/delete/${book.id}" method="post">
+	    <input type="hidden" name="_method" value="delete">
+	    <input type="submit" value="Delete">
+	</form>
 	</div>
 </body>
 </html>

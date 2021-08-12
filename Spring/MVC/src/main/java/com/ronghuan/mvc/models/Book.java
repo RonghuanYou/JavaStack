@@ -21,20 +21,20 @@ public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotNull
     
+    @NotNull
     @Size(min = 5, max = 200)
     private String title;
-    @NotNull
     
+    @NotNull
     @Size(min = 5, max = 200)
     private String description;
-    @NotNull
     
+    @NotNull
     @Size(min = 3, max = 40)
     private String language;
-    @NotNull
     
+    @NotNull
     @Min(100)
     private Integer numberOfPages;
     
@@ -44,7 +44,7 @@ public class Book {
     private Date updatedAt;
 	
     
-    // CONSTRUCTOR
+    // CONSTRUCTORS
     // EMPTY CONSTRUCTOR
     public Book() {
     }

@@ -67,6 +67,4 @@ public class MainService {
 		bookRepository.deleteById(id);
 	}
 	
-	
-
 }
