@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 
 import com.ronghuan.dojoninjas.models.Ninja;
 
-@Repository
 public interface NinjaRepository extends CrudRepository <Ninja, Long> {
 	List<Ninja> findAll();
 }
