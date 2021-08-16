@@ -17,23 +17,21 @@
 </head>
 <body>
 	<div class="container">
-		<h1>New Ninja</h1>
+	        <h1>New Ninja</h1>
 		<form:form action="/ninjas/new" method="post" modelAttribute="ninjasObj">
-			<p>
-				Dojo:
-				<form:select path="ninjasdojo">
-					<c:forEach var="dojo" items="${ dojos }">
-					
-						<form:option value="${ dojo.id }">
-							<c:out value="${ dojo.name }"/>
-						</form:option>			
-					
-					</c:forEach>
-				</form:select>
-			</p>
+		    <p>
+			Dojo:
+			<form:select path="ninjasdojo">
+			    <c:forEach var="dojo" items="${ dojos }">
+			        <form:option value="${ dojo.id }">
+				    <c:out value="${ dojo.name }"/>
+				</form:option>			
+			    </c:forEach>
+			</form:select>
+		    </p>
 		
 		
-			<p>
+		    <p>
 		        <form:label path="firstName">First Name: </form:label>
 		        <form:errors path="firstName"/>
 		        <form:input path="firstName"/>
@@ -45,13 +43,13 @@
 		        <form:input path="lastName"/>
 		    </p>	
 		    	
-	  		<p>
+		    <p>
 		        <form:label path="age">Age: </form:label>
 		        <form:errors path="age"/>
 		        <form:input text="number" path="age"/>
-			</p>	
-			<button>Create</button>
-		</form:form>
+		    </p>	
+		    <button>Create</button>
+	    </form:form>
 	</div>
 </body>
 </html>
