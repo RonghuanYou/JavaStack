@@ -96,16 +96,4 @@ public class LanguageController {
 		languageServ.delete(id);
 		return "redirect:/languages";
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-
-	
-	
-	
 }
