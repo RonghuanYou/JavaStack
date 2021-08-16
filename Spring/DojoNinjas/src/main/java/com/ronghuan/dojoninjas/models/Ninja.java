@@ -26,14 +26,25 @@ public class Ninja {
 	
 	@NotEmpty(message="must not be empty")
 	private String firstName;
+	
 	@NotEmpty(message="must not be empty")
 	private String lastName;
+	
 	private Integer age;
+	
+	@Column(updatable=false)
+	@DateTimeFormat(pattern="yyyy-MM-dd")
+	private Date createdAt;
+	
+
+	@DateTimeFormat(pattern="yyyy-MM-dd")
+	private Date updatedAt;
 	
 	// MANY TO ONE CONFIG
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="dojo_id")
 	private Dojo ninjasdojo;
+	
 	
 	// CONSTRUCTOR
 	// EMPTY
@@ -106,14 +117,6 @@ public class Ninja {
 	}
 
 	// CREATED/UPDATED SET UP
-	@Column(updatable=false)
-	@DateTimeFormat(pattern="yyyy-MM-dd")
-	private Date createdAt;
-	
-
-	@DateTimeFormat(pattern="yyyy-MM-dd")
-	private Date updatedAt;
-	
 
 	@PrePersist
     protected void onCreate(){

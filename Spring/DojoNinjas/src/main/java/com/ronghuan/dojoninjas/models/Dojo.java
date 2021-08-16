@@ -28,6 +28,14 @@ public class Dojo {
 	@NotEmpty(message="must not be empty")
 	private String name;
 	
+	@Column(updatable=false)
+	@DateTimeFormat(pattern="yyyy-MM-dd")
+	private Date createdAt;
+	
+	@DateTimeFormat(pattern="yyyy-MM-dd")
+	private Date updatedAt;
+	
+	
 	
 	// ONE TO MANY CONFIG(One dojo can have many ninjas)
 	@OneToMany(mappedBy="ninjasdojo", fetch=FetchType.LAZY, cascade = CascadeType.ALL)
@@ -85,15 +93,7 @@ public class Dojo {
 		this.updatedAt = updatedAt;
 	}
 
-	// UPDATE/CREATED SET UP
-	@Column(updatable=false)
-	@DateTimeFormat(pattern="yyyy-MM-dd")
-	private Date createdAt;
-	
-	@DateTimeFormat(pattern="yyyy-MM-dd")
-	private Date updatedAt;
-	
-
+	// UPDATE/CREATED 
 	@PrePersist
     protected void onCreate(){
 		this.createdAt = new Date();

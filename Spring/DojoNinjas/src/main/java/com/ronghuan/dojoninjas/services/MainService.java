@@ -41,7 +41,4 @@ public class MainService {
 		return ninjaRepo.save(n);
 	}
 	
-	
-	
-	
 }
