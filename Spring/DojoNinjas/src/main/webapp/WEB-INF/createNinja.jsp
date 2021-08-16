@@ -45,11 +45,11 @@
 		        <form:input path="lastName"/>
 		    </p>	
 		    	
-	  		 <p>
+	  		<p>
 		        <form:label path="age">Age: </form:label>
 		        <form:errors path="age"/>
 		        <form:input text="number" path="age"/>
-		    </p>		
+			</p>	
 			<button>Create</button>
 		</form:form>
 	</div>
