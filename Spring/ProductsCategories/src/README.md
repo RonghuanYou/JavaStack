@@ -1,6 +1,6 @@
 ### Many to many relationship
 
-Using two models Product and Category. Since there is no extra data required for the relationship, you do not need a middle model, that is, you do not need a class to handle the joiner table in the database.
+Using two models Product and Category. Since there is no extra data required for the relationship, do not need a middle model (no need to create class to handle the joiner table in the database).
 
 Tasks:
 ● Allow users to create a product.
