@@ -33,7 +33,6 @@ public class MainController {
 		User user = mainServ.findUserById(userId);
 		model.addAttribute("user", user);
 		return "homePage.jsp";
-
     }
     
 	// -------------------------- REGISTRATION CREATE --------------------------
@@ -44,7 +43,7 @@ public class MainController {
 
     @PostMapping("/registration")
     public String registerUser(@Valid @ModelAttribute("userObj") User filledUser, BindingResult result,
-    	HttpSession session) {
+    		HttpSession session) {
         // if result has errors, return the registration page (don't worry about validations just now)
     	// else, save the user in the database, save the user id in session, and redirect them to the /home route
 
@@ -60,7 +59,7 @@ public class MainController {
         	session.setAttribute("user_id", newUser.getId());
         	return "redirect:/home";
         }
-    }    
+    }
     
 	// -------------------------- LOGIN --------------------------
     @GetMapping("/login")
